@@ -140,7 +140,7 @@ function Buynow() {
 
                                         <div className="w-100 mt-4">
                                             <label htmlFor="phone" className="w-25 fw-medium">Phone No.</label>
-                                            <input type="tel" placeholder="Enter Phone No." className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="phnumber" value={obj.phnumber} onChange={getdata} id="phone" />
+                                            <input type="number" placeholder="Enter Phone No." className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="phnumber" value={obj.phnumber} onChange={getdata} id="phone" />
                                             <div className='text-danger w-75 ms-auto'>{errormsg.phnumber}</div>
                                         </div>
 
