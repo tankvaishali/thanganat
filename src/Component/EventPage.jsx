@@ -232,7 +232,7 @@ function EventPage() {
 
 
                 <div className="text-center mt-3">
-                    <h5 className="text-danger">💥 Let's make this Navaratri unforgettable 💥</h5>
+                    <h5 className="text-danger text-capitalize">💥 Let's make this Navaratri unforgettable 💥</h5>
                 </div>
             </div>
         </div>
