@@ -165,12 +165,11 @@ function Buynow() {
                                         </div>
 
 
-                                        <div className="text-dark fw-bold mt-3" style={{ fontSize: "14.5px" }}>
+                                        <div className="text-dark fw-bold my-2" style={{ fontSize: "14.5px" }}>
                                             Note : Registration is compulsory for childrens above 10 years.
+                                           We will reach out to you promptly once the pass is available.
                                         </div>
-                                        <div className="text-dark fw-bold mt-1 mb-3" style={{ fontSize: "14.5px" }}>
-                                            Note : We will reach out to you promptly once the pass is available.
-                                        </div>
+                                     
 
                                         <div className="w-100">
                                             <Link to={""} className="text-decoration-none">
