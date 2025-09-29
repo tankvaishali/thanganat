@@ -27,12 +27,12 @@ function Buynow() {
             }
         }
 
-        if (name === "email") {
-            if (!value.trim()) errormsg[e.target.name] = "E-mail is required!";
-            else if (!/^[a-zA-Z0-9._%+-]+@(gmail|yahoo|outlook|icloud|hotmail)\.com$/.test(value))
-                errormsg[e.target.name] = "E-mail is not valid.";
-            else errormsg[e.target.name] = "";
-        }
+        // if (name === "email") {
+        //     if (!value.trim()) errormsg[e.target.name] = "E-mail is required!";
+        //     else if (!/^[a-zA-Z0-9._%+-]+@(gmail|yahoo|outlook|icloud|hotmail)\.com$/.test(value))
+        //         errormsg[e.target.name] = "E-mail is not valid.";
+        //     else errormsg[e.target.name] = "";
+        // }
 
         if (e.target.name === "phnumber") {
             if (e.target.value === "" || e.target.value === undefined) {
@@ -46,12 +46,14 @@ function Buynow() {
             }
         }
 
-        if (e.target.name === "pass") {
-            if (e.target.value === "" || e.target.value === undefined) {
-                errormsg[e.target.name] = "No. Of Pass is required!";
-            } else {
-                errormsg[e.target.name] = "";
-            }
+        if (name === "pass") {
+            if (!value || value < 1 || value > 2) errormsg.pass = "Please select a valid number of adult passes!";
+            else errormsg.pass = "";
+        }
+
+        if (name === "childrenpass") {
+            if (!value || value < 1 || value > 2) errormsg.childrenpass = "Please select a valid number of children passes!";
+            else errormsg.childrenpass = "";
         }
 
         seterrormsg({ ...errormsg });
@@ -61,9 +63,14 @@ function Buynow() {
         let tempError = { ...errormsg };
 
         if (!obj.name) tempError.name = "Name is required!";
-        if (!obj.email) tempError.email = "E-mail is required!";
+        // if (!obj.email) tempError.email = "E-mail is required!";
         if (!obj.phnumber) tempError.phnumber = "Phone Number is required!";
-        if (!obj.pass) tempError.pass = "No. Of Pass is required!";
+        if (!obj.pass || obj.pass < 1 || obj.pass > 2) {
+            tempError.pass = "Please select a valid number of adult passes!";
+        }
+        if (!obj.childrenpass || obj.childrenpass < 1 || obj.childrenpass > 2) {
+            tempError.childrenpass = "Please select a valid number of children passes!";
+        }
 
         seterrormsg(tempError);
 
@@ -109,7 +116,7 @@ function Buynow() {
                                         <div><span className="fw-bold">Venue :</span> Samast Leuva Patidar Samaj Trust, Saroli “Sanskrit Bhavan” Opposite Kumbhariya Bus Stand, Pune-Kumbhariya Road, Saroli, Ta.Choryasi, Surat-395010. </div>
                                     </div>
                                     <div className="w-100 h-100">
-                                        <img src={require("../Assets/Images/WhatsApp Image 2025-09-29 at 10.35.56_3d7ef5a2.jpg")} className="img-fluid object-fit-cover rounded w-100 h-100" alt="" />
+                                        <img src={require("../Assets/Images/poster.jpg")} className="img-fluid object-fit-cover rounded w-100 h-100" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -125,26 +132,43 @@ function Buynow() {
                                             <div className='text-danger w-75 ms-auto'>{errormsg.name}</div>
                                         </div>
 
-                                        <div className="w-100 my-4">
+                                        {/* <div className="w-100 my-4">
                                             <label htmlFor="email" className="w-25 fw-medium">E-mail</label>
                                             <input type="text" placeholder="Enter E-mail" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="email" value={obj.email} onChange={getdata} id="email" />
                                             <div className='text-danger w-75 ms-auto'>{errormsg.email}</div>
-                                        </div>
+                                        </div> */}
 
-                                        <div className="w-100">
+                                        <div className="w-100 mt-4">
                                             <label htmlFor="phone" className="w-25 fw-medium">Phone No.</label>
                                             <input type="tel" placeholder="Enter Phone No." className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="phnumber" value={obj.phnumber} onChange={getdata} id="phone" />
                                             <div className='text-danger w-75 ms-auto'>{errormsg.phnumber}</div>
                                         </div>
 
                                         <div className="w-100 mt-4">
-                                            <label htmlFor="pass" className="w-25 fw-medium">No. Of Pass</label>
-                                            <input type="number" placeholder="Enter Pass No." className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="pass" value={obj.pass} onChange={getdata} id="pass" />
+                                            <label htmlFor="pass" className="w-25 fw-medium">No. Of <br /> Adults</label>
+                                            <select id="pass" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="pass" value={obj.pass} onChange={getdata}>
+                                                <option value="">Select Pass</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
                                             <div className='text-danger w-75 ms-auto'>{errormsg.pass}</div>
                                         </div>
 
-                                        <div className="text-dark fw-bold my-3" style={{ fontSize: "14.5px" }}>
+                                        <div className="w-100 mt-4">
+                                            <label htmlFor="childrenpass" className="w-25 fw-medium">No. Of Children</label>
+                                            <select id="childrenpass" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="childrenpass" value={obj.childrenpass} onChange={getdata}>
+                                                <option value="">Select Pass</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                            <div className='text-danger w-75 ms-auto'>{errormsg.childrenpass}</div>
+                                        </div>
+
+                                        <div className="text-dark fw-bold mt-3" style={{ fontSize: "14.5px" }}>
                                             Note : Registration is compulsory for childrens above 10 years.
+                                        </div>
+                                        <div className="text-dark fw-bold mt-1 mb-3" style={{ fontSize: "14.5px" }}>
+                                            Note : You will be contacted when the pass becomes available shortly.
                                         </div>
 
                                         <div className="w-100">
@@ -158,7 +182,7 @@ function Buynow() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* {savedId && (
                 <div className="popup-overlay position-fixed w-100 h-100 d-flex justify-content-center align-items-center" onClick={() => setSavedId(null)}>

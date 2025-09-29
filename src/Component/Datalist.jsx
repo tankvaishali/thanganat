@@ -89,9 +89,9 @@ const Datalist = () => {
                                 <th>Sr. No.</th>
                                 <th>Id</th>
                                 <th>Name</th>
-                                <th>E-mail</th>
                                 <th>Phone No.</th>
-                                <th>Pass</th>
+                                <th>Adult Pass</th>
+                                <th>Children Pass</th>
                                 <th>Date</th>
                                 <th>Time</th>
                             </tr>
@@ -105,9 +105,9 @@ const Datalist = () => {
                                             <td>{index + 1}.</td>
                                             <td>{item._id}</td>
                                             <td>{item.name}</td>
-                                            <td>{item.email}</td>
                                             <td>{item.phnumber}</td>
                                             <td>{item.pass}</td>
+                                            <td>{item.childrenpass}</td>
                                             <td>{formattedDate}</td>
                                             <td>{formattedTime}</td>
                                         </tr>
