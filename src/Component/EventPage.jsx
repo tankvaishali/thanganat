@@ -66,7 +66,7 @@ function EventPage() {
                     <div className="bg-warning text-dark text-center p-2 rounded-3 mb-0 mb-md-4 fw-bold">
                         ગરબા " માં " ની ભક્તિ નું એક રૂપ છે, ગરબા આનંદ ની પ્રસ્તુતિ નું એક સ્વરૂપ છે.
                     </div>
-                         <div className="h-100 bg-white rounded-4 p-3 d-flex flex-column justify-content-between">
+                         <div className="h-100 bg-white rounded-4 p-3 d-flex flex-column justify-content-between mt-3">
                     <div className='text-center rounded p-3 py- py-md-4 bg-warning'>
                         <div className='fw-bold display-6'>
                             Registration is compulsory !
@@ -192,7 +192,8 @@ function EventPage() {
 
 
                 <div className="text-center mt-3">
-                    <h5 className="text-danger text-capitalize">💥 Let's make this Navaratri unforgettable 💥</h5>
+                    <h5 className="text-danger text-capitalize">
+                         Let's make this Navaratri unforgettable </h5>
                 </div>
             </div>
         </div>
