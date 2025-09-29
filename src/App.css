@@ -3,10 +3,85 @@
   margin: 0px;
   box-sizing: border-box;
 }
-
 :root{
-  --darkviolet:#06001c;
+  --darkviolet:#0a002e;
 }
 .darkviolet{
   background-color: var(--darkviolet);
 }
+.bg_image{
+  background-image: url("https://yfdecor.com/wp-content/uploads/2025/09/navratri-garba-ground-decoration.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* buy now form start */
+@media (min-width: 992px) {
+  .TicketForm_bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-image: url("../src//Assets/Images/form_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .TicketForm_bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+  }
+}
+@media (max-width: 991px) {
+  .TicketForm_bg::before,
+  .TicketForm_bg::after {
+    content: none;
+  }
+}
+.contact_menu {
+  transition: all 0.3s ease-in-out;
+}
+.contact_menu:hover {
+  color: var(--darkviolet) !important;
+}
+.input_form {
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+.input_form:hover {
+  border: 1px solid var(--darkviolet) !important;
+}
+.popup-overlay {
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.popup-content {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+.popup-content button {
+  background: var(--darkviolet);
+}
+.form-control:focus {
+  box-shadow: none !important;
+}
+.buttons {
+  background-color: var(--darkviolet);
+}
+.buttons:hover {
+  background-color: rgb(149, 5, 5);
+}
+/* buy now form end */
+ 
