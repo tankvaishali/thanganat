@@ -112,7 +112,7 @@ function Buynow() {
                                     <div className="rounded" style={{ width: "50px", border: "3px solid var(--orange)" }}></div>
                                     <div className="my-3">
                                         <div><span className="fw-bold">Date :</span> 12 October 2025 (Sunday)</div>
-                                        <div className="my-1"><span className="fw-bold">Time :</span> 04:00 PM Onwards</div>
+                                        <div className="my-1"><span className="fw-bold">Time :</span> 4:00 PM Onwards</div>
                                         <div><span className="fw-bold">Venue :</span> Samast Leuva Patidar Samaj Trust, Saroli “Sanskrit Bhavan” Opposite Kumbhariya Bus Stand, Pune-Kumbhariya Road, Saroli, Ta.Choryasi, Surat-395010. </div>
                                     </div>
                                     <div className="w-100 h-100">
