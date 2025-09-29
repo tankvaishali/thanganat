@@ -10,8 +10,8 @@
   background-color: var(--darkviolet);
 }
 .bg_image{
-  background-image: url("./Assets/Images/navratri-garba-ground-decoration.png");
-  background-position: center;
+  background-image: url("./Assets/Images/bg_wpbg.jpg");
+  background-position:top center;
   background-repeat: no-repeat;
   background-size: cover;
 }

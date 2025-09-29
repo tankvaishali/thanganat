@@ -20,7 +20,7 @@ function Homepage() {
                         </div> */}
                         <div className="row d-flex justify-content-center py-3 ">
                             <div className="col-12 col-md-6 col-lg-6">
-                                <img src={require("../Assets/Images/WhatsApp Image 2025-09-29 at 10.35.56_3d7ef5a2.jpg")} alt="" className='img-fluid object-fit-cover rounded-4 border border-secondary border-4 w-100 h-100' />
+                                <img src={require("../Assets/Images/poster.jpg")} alt="" className='img-fluid object-fit-cover rounded-4 border border-secondary border-4 w-100 h-100' />
                             </div>
                         </div>
 

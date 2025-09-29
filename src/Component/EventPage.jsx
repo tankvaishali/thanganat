@@ -63,25 +63,10 @@ function EventPage() {
                             <span className="text-danger"> LGDA NAVRATRI THANGANAT - 2025 🛕🛕 </span></h5>
                     </div>
                    
-                    <div className="bg-warning text-dark text-center p-2 rounded-3 mb-0 mb-md-4 fw-bold">
+                    <div className=" text-dark text-center p-2 rounded-3 mb-0 mb-md-4 fw-bold" style={{backgroundColor:"rgb(0 176 211)"}}>
                         ગરબા " માં " ની ભક્તિ નું એક રૂપ છે, ગરબા આનંદ ની પ્રસ્તુતિ નું એક સ્વરૂપ છે.
                     </div>
-                         <div className="h-100 bg-white rounded-4 p-3 d-flex flex-column justify-content-between mt-3">
-                    <div className='text-center rounded p-3 py- py-md-4 bg-warning'>
-                        <div className='fw-bold display-6'>
-                            Registration is compulsory !
-                        </div>
-                 
-                        <div className='fw-bold text-dark pt-2 ' style={{ fontSize: 14 }}>
-                            Note : “Registration is compulsory for childrens above 10 years.”
-                        </div>
-                    </div>
-                    <div className='mt-2 darkviolet rounded'>
-                        <Link to={"/buynow"} className='text-decoration-none '>
-                            <button className='buttons w-100 btn text-light' type="button" style={{ fontFamily: "Sora, Sans-serif", fontWeight: 700 }}>Register Now</button>
-                        </Link>
-                    </div>
-                </div>
+                
 
                  
                 </div>
@@ -101,10 +86,10 @@ function EventPage() {
 
                 {/* Invitation Text */}
                 <div className="bg_image py-5 my-3 my-md-5 mb-3">
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-center py-1">
                         <div className="col-11 col-md-8">
 
-                            <div className="  rounded my-5 text-center text-white p-3" style={{ backgroundColor: "#08004eb9" }}>
+                            <div className="  rounded my-3 my-md-5 text-center text-white p-3" style={{ backgroundColor: "#08004ee3" }}>
                                 <h4 className="fw-bold text-warning">➡ You're Invited!</h4>
                                 <p>
                                     Dear Doctors, get ready to dance 💃 to the beats 🎶 of joy, revel in
@@ -116,7 +101,7 @@ function EventPage() {
                         </div>
                         <div className="col-10 col-md-6">
 
-                            <div className="  rounded text-center text-white p-3" style={{ backgroundColor: "#07004baf" }}>
+                            <div className="  rounded text-center text-white p-3" style={{ backgroundColor: "#04002be1" }}>
                                 <div className=" text-white p-3 rounded ">
                                     <h4 className="text-warning">➡ DRESS CODE:</h4>
                                     <p className="text-capitalize">Traditional Gujarati attire or colorful outfits.</p>
@@ -190,9 +175,24 @@ function EventPage() {
 </div>
 
 
-
+         <div className="h-100 bg-white rounded-4 p-3 d-flex flex-column justify-content-between mt-3">
+                    <div className='text-center rounded p-3 py- py-md-4 ' style={{backgroundColor:"rgb(0 176 211)"}}>
+                        <div className='fw-bold display-6'>
+                            Registration is compulsory !
+                        </div>
+                 
+                        <div className='fw-bold text-dark pt-2 ' style={{ fontSize: 14 }}>
+                            Note : “Registration is compulsory for childrens above 10 years.”
+                        </div>
+                    </div>
+                    <div className='mt-2 darkviolet rounded'>
+                        <Link to={"/buynow"} className='text-decoration-none '>
+                            <button className='buttons w-100 btn text-light' type="button" style={{ fontFamily: "Sora, Sans-serif", fontWeight: 700 }}>Register Now</button>
+                        </Link>
+                    </div>
+                </div>
                 <div className="text-center mt-3">
-                    <h5 className="text-danger text-capitalize">
+                    <h5 className=" text-capitalize  border-bottom border-info pb-2" style={{color:"rgb(0 176 211)"}}>
                          Let's make this Navaratri unforgettable </h5>
                 </div>
             </div>
