@@ -101,7 +101,7 @@ function Buynow() {
                         <div className="row d-flex justify-content-center align-items-center">
                             <div className="col-12 col-lg-6 p-4 p-lg-5">
                                 <div className="h-100">
-                                    <div className="title fs-3 mt-3 mb-2 fw-bold">Navratri Thanganat 2025</div>
+                                    <div className="title fs-3 mt-3 mb-2 fw-bold">LGDA Navratri Thanganat 2025</div>
                                     <div className="rounded" style={{ width: "50px", border: "3px solid var(--orange)" }}></div>
                                     <div className="my-3">
                                         <div><span className="fw-bold">Date :</span> 12 October 2025 (Sunday)</div>
@@ -116,7 +116,7 @@ function Buynow() {
                             <div className="col-12 col-lg-6 px-3 pb-4 p-lg-5">
                                 <div className="h-100">
                                     <div className="bg-white shadow p-3 p-md-4 rounded" style={{ border: "5px double black" }}>
-                                        <div className="title fs-5 fw-bold"> Navratri Thanganat 2025 Registration Form</div>
+                                        <div className="title fs-5 fw-bold"> LGDA Navratri Thanganat 2025 Registration Form</div>
                                         <div className="rounded mt-2" style={{ width: "50px", border: "3px solid var(--orange)" }}></div>
 
                                         <div className="w-100 mt-4">
@@ -144,7 +144,7 @@ function Buynow() {
                                         </div>
 
                                         <div className="text-dark fw-bold my-3" style={{ fontSize: "14.5px" }}>
-                                            Note :- Registration is compulsary for childrens above 10 years.
+                                            Note : Registration is compulsory for childrens above 10 years.
                                         </div>
 
                                         <div className="w-100">
