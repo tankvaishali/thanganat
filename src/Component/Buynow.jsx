@@ -1,0 +1,182 @@
+import axios from "axios";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+
+function Buynow() {
+
+    const [obj, setobj] = useState({});
+    let [blankobj, setblankobj] = useState({});
+    const [savedId, setSavedId] = useState(null);
+    const [errormsg, seterrormsg] = useState({});
+
+    const getdata = (e) => {
+        const { name, value } = e.target;
+        obj[name] = value;
+        blankobj[name] = "";
+        setobj({ ...obj });
+        setblankobj({ ...blankobj });
+
+        if (e.target.name === "name") {
+            if (e.target.value === "" || e.target.value === undefined) {
+                errormsg[e.target.name] = "Name is required!";
+            } else if (!/^[a-zA-Z ]{1,40}$/.test(e.target.value)) {
+                errormsg[e.target.name] = "Name must be alaphabet.";
+            } else {
+                errormsg[e.target.name] = "";
+            }
+        }
+
+        if (name === "email") {
+            if (!value.trim()) errormsg[e.target.name] = "E-mail is required!";
+            else if (!/^[a-zA-Z0-9._%+-]+@(gmail|yahoo|outlook|icloud|hotmail)\.com$/.test(value))
+                errormsg[e.target.name] = "E-mail is not valid.";
+            else errormsg[e.target.name] = "";
+        }
+
+        if (e.target.name === "phnumber") {
+            if (e.target.value === "" || e.target.value === undefined) {
+                errormsg[e.target.name] = "Phone Number is required!";
+            } else if (e.target.value.length < 10) {
+                errormsg[e.target.name] = "Phone Number must be 10 digits.";
+            } else if (e.target.value.length > 10) {
+                errormsg[e.target.name] = "Phone Number is not valid.";
+            } else {
+                errormsg[e.target.name] = "";
+            }
+        }
+
+        if (e.target.name === "pass") {
+            if (e.target.value === "" || e.target.value === undefined) {
+                errormsg[e.target.name] = "No. Of Pass is required!";
+            } else {
+                errormsg[e.target.name] = "";
+            }
+        }
+
+        seterrormsg({ ...errormsg });
+    };
+
+    const savedata = () => {
+        let tempError = { ...errormsg };
+
+        if (!obj.name) tempError.name = "Name is required!";
+        if (!obj.email) tempError.email = "E-mail is required!";
+        if (!obj.phnumber) tempError.phnumber = "Phone Number is required!";
+        if (!obj.pass) tempError.pass = "No. Of Pass is required!";
+
+        seterrormsg(tempError);
+
+        if (Object.values(tempError).every(x => x === "")) {
+            axios.post("https://thanganat-backend.vercel.app/", {
+                ...obj,
+                phnumber: Number(obj.phnumber)
+            })
+                .then(res => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Your form has been submitted successfully.',
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                    // setSavedId(res.data._id);
+                    setobj({ ...blankobj });
+                })
+                .catch(err => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: err.response?.data?.error || "Something went wrong!"
+                    });
+                });
+        }
+    };
+
+    return (
+        <>
+            <div className="TicketForm_bg w-100 h-auto d-flex position-relative">
+                <div className="w-100 h-100 position-relative z-1 d-flex align-items-center">
+                    <div className="container py-4">
+                        <div className="row d-flex justify-content-center align-items-center">
+                            <div className="col-12 col-lg-6 p-4 p-lg-5">
+                                <div className="h-100">
+                                    <div className="title fs-3 mt-3 mb-2 fw-bold">Navratri Thanganat 2025</div>
+                                    <div className="rounded" style={{ width: "50px", border: "3px solid var(--orange)" }}></div>
+                                    <div className="my-3">
+                                        <div><span className="fw-bold">Date :</span> 12 October 2025 (Sunday)</div>
+                                        <div className="my-1"><span className="fw-bold">Time :</span> 04:00 PM Onwards</div>
+                                        <div><span className="fw-bold">Venue :</span> સમસ્ત લેઉવા પાટીદાર સમાજ ટ્રસ્ટ, સારોલી "સાંસ્કૃતિક ભવન", કુંભારીયા બસ સ્ટેન્ડની સામે, પુણા-કુંભારીયા રોડ, મુ.પો. સારોલી, તા. ચોર્યાસી, જી. સુરત-૩૯૫0૧0.</div>
+                                    </div>
+                                    <div className="w-100 h-100">
+                                        <img src={require("../Assets/Images/WhatsApp Image 2025-09-29 at 10.35.56_3d7ef5a2.jpg")} className="img-fluid object-fit-cover rounded w-100 h-100" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-12 col-lg-6 px-3 pb-4 p-lg-5">
+                                <div className="h-100">
+                                    <div className="bg-white shadow p-3 p-md-4 rounded" style={{ border: "5px double black" }}>
+                                        <div className="title fs-5 fw-bold"> Navratri Thanganat 2025 Registration Form</div>
+                                        <div className="rounded mt-2" style={{ width: "50px", border: "3px solid var(--orange)" }}></div>
+
+                                        <div className="w-100 mt-4">
+                                            <label htmlFor="name" className="w-25 fw-medium">Name</label>
+                                            <input type="text" placeholder="Enter Name" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="name" value={obj.name} onChange={getdata} id="name" />
+                                            <div className='text-danger w-75 ms-auto'>{errormsg.name}</div>
+                                        </div>
+
+                                        <div className="w-100 my-4">
+                                            <label htmlFor="email" className="w-25 fw-medium">E-mail</label>
+                                            <input type="text" placeholder="Enter E-mail" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="email" value={obj.email} onChange={getdata} id="email" />
+                                            <div className='text-danger w-75 ms-auto'>{errormsg.email}</div>
+                                        </div>
+
+                                        <div className="w-100">
+                                            <label htmlFor="phone" className="w-25 fw-medium">Phone No.</label>
+                                            <input type="tel" placeholder="Enter Phone No." className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="phnumber" value={obj.phnumber} onChange={getdata} id="phone" />
+                                            <div className='text-danger w-75 ms-auto'>{errormsg.phnumber}</div>
+                                        </div>
+
+                                        <div className="w-100 mt-4">
+                                            <label htmlFor="pass" className="w-25 fw-medium">No. Of Pass</label>
+                                            <input type="number" placeholder="Enter Pass No." className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="pass" value={obj.pass} onChange={getdata} id="pass" />
+                                            <div className='text-danger w-75 ms-auto'>{errormsg.pass}</div>
+                                        </div>
+
+                                        <div className="text-dark fw-bold my-3" style={{ fontSize: "14.5px" }}>
+                                            Note :- Registration is compulsary for childrens above 10 years.
+                                        </div>
+
+                                        <div className="w-100">
+                                            <Link to={""} className="text-decoration-none">
+                                                <button className="buttons w-100 btn text-light" type="button" onClick={savedata} style={{ fontFamily: "Sora, Sans-serif", fontWeight: 700 }}>Submit</button>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* {savedId && (
+                <div className="popup-overlay position-fixed w-100 h-100 d-flex justify-content-center align-items-center" onClick={() => setSavedId(null)}>
+                    <div className="popup-content bg-white rounded text-center p-3">
+                        <h3>Success!</h3>
+                        <p>Your form has been submitted.</p>
+                        <p><strong>Saved ID :</strong> {savedId}</p>
+                        <button className="px-3 py-2 border-0 text-white buttons fw-bold cursor-pointer rounded" onClick={() => {
+                            navigator.clipboard.writeText(savedId);
+                            setSavedId(null);
+                        }}>Copy ID</button>
+                        <div className="fw-bold mt-3">રજીસ્ટ્રેશન માટે ID જરૂરી છે, તેથી તેને સાચવી રાખજો અને કોપી કરવાનું ભૂલશો નહીં.</div>
+                    </div>
+                </div>
+            )} */}
+        </>
+
+    );
+}
+
+export default Buynow;
