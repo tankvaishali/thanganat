@@ -10,26 +10,7 @@ import { Link } from "react-router-dom";
 import { FaUserDoctor } from "react-icons/fa6";
 
 function EventPage() {
-    let detail = [
-        {
-            icon: <FiClock />,
-            title: "Time :",
-            detail: "04:00 PM Onwards",
-            col: "col-12 col-md-3"
-        },
-        {
-            icon: <FaRegCalendarAlt />,
-            title: "Date:",
-            detail: "12 October 2025​",
-            col: "col-12 col-md-3"
-        },
-        {
-            icon: <HiOutlineLocationMarker />,
-            title: "Venue:",
-            detail: 'સમસ્ત લેઉવા પાટીદાર સમાજ ટ્રસ્ટ, સારોલી “ સાંસ્કૃતિક ભવન "કુંભારીયા બસ સ્ટેન્ડની સામે, પૂણા-કુંભારીયા રોડ, મુ.પો. સારોલી, તા.ચોર્યાસી, જી. સુરત-૩૯૫૦૧૦.',
-            col: "col-12 col-md-6"
-        },
-    ]
+ 
     const details = [
         {
             icon: <FaRegCalendarAlt />,
@@ -39,7 +20,7 @@ function EventPage() {
         {
             icon: <HiOutlineLocationMarker />,
             title: "VENUE :",
-            detail: 'સમસ્ત લેઉવા પાટીદાર સમાજ ટ્રસ્ટ, સારોલી “ સાંસ્કૃતિક ભવન "કુંભારીયા બસ સ્ટેન્ડની સામે, પૂણા-કુંભારીયા રોડ, મુ.પો. સારોલી, તા.ચોર્યાસી, જી. સુરત-૩૯૫૦૧૦.',
+            detail: 'Samast Leuva Patidar Samaj Trust, Saroli “Sanskrit Bhavan” Opposite Kumbhariya Bus Stand, Pune-Kumbhariya Road, Saroli, Ta.Choryasi, Surat-395010.',
         },
         {
             icon: <FiClock />,
@@ -85,7 +66,7 @@ function EventPage() {
             <span className="text-danger">  LGDA NAVRATRI THANGANAT -2025 🛕🛕</span>
           </h5> */}
                     <div className="bg-warning text-dark text-center p-2 rounded-3 mb-4 fw-bold">
-                        ગરબા " માં " ની ભક્તિ નું એક રૂપ છે, ગરબા આનંદ ની પ્રસ્તુતિ નું એક સ્વરૂપ છે
+                        ગરબા " માં " ની ભક્તિ નું એક રૂપ છે, ગરબા આનંદ ની પ્રસ્તુતિ નું એક સ્વરૂપ છે.
                     </div>
                     {/* <div className="lightviolet ">
                             <div className="row px-1 d-flex align-items-center mx-1 justify-content-center">
@@ -124,9 +105,9 @@ function EventPage() {
                 {/* Invitation Text */}
                 <div className="bg_image py-5 my-5">
                     <div className="row justify-content-center">
-                        <div className="col-10 col-md-8">
+                        <div className="col-11 col-md-8">
 
-                            <div className="  rounded my-5 text-center text-white p-0 p-md-3" style={{ backgroundColor: "#08004eb9" }}>
+                            <div className="  rounded my-5 text-center text-white p-3" style={{ backgroundColor: "#08004eb9" }}>
                                 <h4 className="fw-bold text-warning">➡ You're Invited!</h4>
                                 <p>
                                     Dear Doctors, get ready to dance 💃 to the beats 🎶 of joy, revel in
@@ -169,7 +150,7 @@ function EventPage() {
 
 
                 <div className="h-100 bg-white rounded-4 p-3 d-flex flex-column justify-content-between">
-                    <div className='text-center rounded p-3 py-4 bg-warning'>
+                    <div className='text-center rounded p-3 py-2 py-md-4 bg-warning'>
                         <div className='fw-bold display-6'>
                             Registration is compulsory !
                         </div>
@@ -196,7 +177,7 @@ function EventPage() {
   <div className="row justify-content-center">
     {/* President */}
     <div className="col-12 col-md-4 mb-4">
-      <div className="p-4 rounded-4 shadow-lg bg-gradient text-white h-100">
+      <div className="p-2 p-md-4 rounded-4 shadow-lg bg-gradient text-white h-100">
         <div className="d-flex flex-column align-items-center">
         <h2 className=""><FaUserDoctor /></h2>
           <h5 className="fw-bold text-warning">DR. VIJAY PATIL</h5>
@@ -207,7 +188,7 @@ function EventPage() {
 
     {/* Vice President */}
     <div className="col-12 col-md-4 mb-4">
-      <div className="p-4 rounded-4 shadow-lg bg-gradient text-white h-100">
+      <div className="p-2 p-md-4 rounded-4 shadow-lg bg-gradient text-white h-100">
         <div className="d-flex flex-column align-items-center">
        <h2 className=""><FaUserDoctor /></h2>
           <h5 className="fw-bold text-warning">DR. KIRAN Y PATIL</h5>
@@ -218,7 +199,7 @@ function EventPage() {
 
     {/* Secretary */}
     <div className="col-12 col-md-4 mb-4">
-      <div className="p-4 rounded-4 shadow-lg bg-gradient text-white h-100">
+      <div className="p-2 p-md-4 rounded-4 shadow-lg bg-gradient text-white h-100">
         <div className="d-flex flex-column align-items-center">
        <h2 className=""><FaUserDoctor /></h2>
           <h5 className="fw-bold text-warning">DR. GIRISH D. VAVDIYA</h5>
