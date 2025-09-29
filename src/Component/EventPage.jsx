@@ -62,31 +62,28 @@ function EventPage() {
                         <h5 className='title py-2'> You're Invited To Our Grand
                             <span className="text-danger"> LGDA NAVRATRI THANGANAT - 2025 🛕🛕 </span></h5>
                     </div>
-                    {/* <h5 className="text-light">
-            <span className="text-danger">  LGDA NAVRATRI THANGANAT -2025 🛕🛕</span>
-          </h5> */}
+                   
                     <div className="bg-warning text-dark text-center p-2 rounded-3 mb-0 mb-md-4 fw-bold">
                         ગરબા " માં " ની ભક્તિ નું એક રૂપ છે, ગરબા આનંદ ની પ્રસ્તુતિ નું એક સ્વરૂપ છે.
                     </div>
-                    {/* <div className="lightviolet ">
-                            <div className="row px-1 d-flex align-items-center mx-1 justify-content-center">
-                                {
-                                    detail.map((x, i) => {
-                                        return (
-                                            <div className={`p-1 ${x.col}`} key={i}>
-                                                <div className="d-flex align-items-center  text-white fw-medium">
-                                                    <div className=' display-5 pe-3 d-flex align-items-center justify-content-center' style={{color:"#8f82ee"}}>{x.icon}</div>
-                                                    <div>
-                                                        <h5>{x.title}</h5>
-                                                        <h6>{x.detail}</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </div> */}
+                         <div className="h-100 bg-white rounded-4 p-3 d-flex flex-column justify-content-between">
+                    <div className='text-center rounded p-3 py- py-md-4 bg-warning'>
+                        <div className='fw-bold display-6'>
+                            Registration is compulsory !
+                        </div>
+                 
+                        <div className='fw-bold text-dark pt-2 ' style={{ fontSize: 14 }}>
+                            Note : “Registration is compulsory for childrens above 10 years.”
+                        </div>
+                    </div>
+                    <div className='mt-2 darkviolet rounded'>
+                        <Link to={"/buynow"} className='text-decoration-none '>
+                            <button className='buttons w-100 btn text-light' type="button" style={{ fontFamily: "Sora, Sans-serif", fontWeight: 700 }}>Register Now</button>
+                        </Link>
+                    </div>
+                </div>
+
+                 
                 </div>
 
                 {/* Event Info */}
@@ -149,25 +146,7 @@ function EventPage() {
 
 
 
-                <div className="h-100 bg-white rounded-4 p-3 d-flex flex-column justify-content-between">
-                    <div className='text-center rounded p-3 py- py-md-4 bg-warning'>
-                        <div className='fw-bold display-6'>
-                            Registration is compulsory !
-                        </div>
-                        {/* <div className='fw-bold'>
-                                        for couples and their childrens
-                                    </div> */}
-                        <div className='fw-bold text-dark pt-2 ' style={{ fontSize: 14 }}>
-                            Note : “Registration is compulsory for childrens above 10 years.”
-                        </div>
-                    </div>
-                    <div className='mt-2 darkviolet rounded'>
-                        <Link to={"/buynow"} className='text-decoration-none '>
-                            <button className='buttons w-100 btn text-light' type="button" style={{ fontFamily: "Sora, Sans-serif", fontWeight: 700 }}>Register Now</button>
-                        </Link>
-                    </div>
-                </div>
-
+           
                 {/* Dress Code */}
 
 
