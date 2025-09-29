@@ -106,7 +106,7 @@ function Buynow() {
                                     <div className="my-3">
                                         <div><span className="fw-bold">Date :</span> 12 October 2025 (Sunday)</div>
                                         <div className="my-1"><span className="fw-bold">Time :</span> 04:00 PM Onwards</div>
-                                        <div><span className="fw-bold">Venue :</span> Samast Leuva Patidar Samaj Trust, Saroli “Sanskrit Bhavan” Opposite Kumbhariya Bus Stand, Pune-Kumbhariya Road, Saroli, Ta.Choryasi, Surat-395010</div>
+                                        <div><span className="fw-bold">Venue :</span> Samast Leuva Patidar Samaj Trust, Saroli “Sanskrit Bhavan” Opposite Kumbhariya Bus Stand, Pune-Kumbhariya Road, Saroli, Ta.Choryasi, Surat-395010. </div>
                                     </div>
                                     <div className="w-100 h-100">
                                         <img src={require("../Assets/Images/WhatsApp Image 2025-09-29 at 10.35.56_3d7ef5a2.jpg")} className="img-fluid object-fit-cover rounded w-100 h-100" alt="" />

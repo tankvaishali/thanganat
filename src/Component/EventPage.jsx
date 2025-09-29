@@ -53,11 +53,11 @@ function EventPage() {
     ];
 
     return (
-        <div className=" text-white py-4">
+        <div className=" text-white py-1 py-md-3">
             <div className="container">
                 {/* Title Section */}
                 <div className="text-center mb-4">
-                    <h2 className="fw-bold text-warning"> 💥 Celebrate Navaratri With LGDA 💥 </h2>
+                    <h2 className="fw-bold text-warning">  Celebrate Navaratri With LGDA  </h2>
                     <div className='text-center text-white fw-bold'>
                         <h5 className='title py-2'> You're Invited To Our Grand
                             <span className="text-danger"> LGDA NAVRATRI THANGANAT - 2025 🛕🛕 </span></h5>
@@ -65,7 +65,7 @@ function EventPage() {
                     {/* <h5 className="text-light">
             <span className="text-danger">  LGDA NAVRATRI THANGANAT -2025 🛕🛕</span>
           </h5> */}
-                    <div className="bg-warning text-dark text-center p-2 rounded-3 mb-4 fw-bold">
+                    <div className="bg-warning text-dark text-center p-2 rounded-3 mb-0 mb-md-4 fw-bold">
                         ગરબા " માં " ની ભક્તિ નું એક રૂપ છે, ગરબા આનંદ ની પ્રસ્તુતિ નું એક સ્વરૂપ છે.
                     </div>
                     {/* <div className="lightviolet ">
@@ -90,7 +90,7 @@ function EventPage() {
                 </div>
 
                 {/* Event Info */}
-                <div className="row text-center my-4">
+                <div className="row text-center my-2 my-md-4 mt-0 mt-md-2">
                     {details.map((d, i) => (
                         <div className="col-md-4 my-3" key={i}>
                             <div className="p-3 border rounded  h-100 " style={{ backgroundColor: "#4700249f" }}>
@@ -103,7 +103,7 @@ function EventPage() {
                 </div>
 
                 {/* Invitation Text */}
-                <div className="bg_image py-5 my-5">
+                <div className="bg_image py-5 my-3 my-md-5 mb-3">
                     <div className="row justify-content-center">
                         <div className="col-11 col-md-8">
 
@@ -132,7 +132,7 @@ function EventPage() {
 
 
                 {/* Highlights */}
-                <div className="my-5 py-3">
+                <div className="py-1 py-md-5">
                     <h4 className="text-center text-warning mb-3">➡ EVENT HIGHLIGHTS :</h4>
                     <div className="row">
                         {highlights.map((h, i) => (
@@ -150,7 +150,7 @@ function EventPage() {
 
 
                 <div className="h-100 bg-white rounded-4 p-3 d-flex flex-column justify-content-between">
-                    <div className='text-center rounded p-3 py-2 py-md-4 bg-warning'>
+                    <div className='text-center rounded p-3 py- py-md-4 bg-warning'>
                         <div className='fw-bold display-6'>
                             Registration is compulsory !
                         </div>
@@ -172,8 +172,8 @@ function EventPage() {
 
 
                 {/* Team Section */}
-<div className="text-center pt-5">
-  <h3 className="fw-bold text-warning mb-4">❤ TEAM LGDA ❤</h3>
+<div className="text-center pt-3 pt-md-5">
+  <h3 className="fw-bold text-warning mb-2 mb-md-4">❤ TEAM LGDA ❤</h3>
   <div className="row justify-content-center">
     {/* President */}
     <div className="col-12 col-md-4 mb-4">
@@ -181,7 +181,7 @@ function EventPage() {
         <div className="d-flex flex-column align-items-center">
         <h2 className=""><FaUserDoctor /></h2>
           <h5 className="fw-bold text-warning">DR. VIJAY PATIL</h5>
-          <p className="fst-italic">PRESIDENT</p>
+          <p className="">PRESIDENT</p>
         </div>
       </div>
     </div>
@@ -192,18 +192,18 @@ function EventPage() {
         <div className="d-flex flex-column align-items-center">
        <h2 className=""><FaUserDoctor /></h2>
           <h5 className="fw-bold text-warning">DR. KIRAN Y PATIL</h5>
-          <p className="fst-italic">VICE PRESIDENT</p>
+          <p className="">VICE PRESIDENT</p>
         </div>
       </div>
     </div>
 
     {/* Secretary */}
-    <div className="col-12 col-md-4 mb-4">
+    <div className="col-12 col-md-4 mb-md-4 mb-0">
       <div className="p-2 p-md-4 rounded-4 shadow-lg bg-gradient text-white h-100">
         <div className="d-flex flex-column align-items-center">
        <h2 className=""><FaUserDoctor /></h2>
           <h5 className="fw-bold text-warning">DR. GIRISH D. VAVDIYA</h5>
-          <p className="fst-italic">SECRETARY</p>
+          <p className="">SECRETARY</p>
         </div>
       </div>
     </div>
