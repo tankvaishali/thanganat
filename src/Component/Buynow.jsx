@@ -164,6 +164,7 @@ function Buynow() {
                                             <div className='text-danger w-75 ms-auto'>{errormsg.childrenpass}</div>
                                         </div>
 
+
                                         <div className="text-dark fw-bold mt-3" style={{ fontSize: "14.5px" }}>
                                             Note : Registration is compulsory for childrens above 10 years.
                                         </div>
