@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function Buynow() {
-
     const [obj, setobj] = useState({});
     let [blankobj, setblankobj] = useState({});
-    const [savedId, setSavedId] = useState(null);
     const [errormsg, seterrormsg] = useState({});
 
     const getdata = (e) => {
@@ -17,44 +15,37 @@ function Buynow() {
         setobj({ ...obj });
         setblankobj({ ...blankobj });
 
-        if (e.target.name === "name") {
-            if (e.target.value === "" || e.target.value === undefined) {
-                errormsg[e.target.name] = "Name is required!";
-            } else if (!/^[a-zA-Z ]{1,40}$/.test(e.target.value)) {
-                errormsg[e.target.name] = "Name must be alaphabet.";
+        if (name === "name") {
+            if (!value) {
+                errormsg[name] = "Name is required!";
+            } else if (!/^[a-zA-Z ]{1,40}$/.test(value)) {
+                errormsg[name] = "Name must be alphabet.";
             } else {
-                errormsg[e.target.name] = "";
+                errormsg[name] = "";
             }
         }
 
-        // if (name === "email") {
-        //     if (!value.trim()) errormsg[e.target.name] = "E-mail is required!";
-        //     else if (!/^[a-zA-Z0-9._%+-]+@(gmail|yahoo|outlook|icloud|hotmail)\.com$/.test(value))
-        //         errormsg[e.target.name] = "E-mail is not valid.";
-        //     else errormsg[e.target.name] = "";
-        // }
-
-        if (e.target.name === "phnumber") {
-            if (e.target.value === "" || e.target.value === undefined) {
-                errormsg[e.target.name] = "Phone Number is required!";
-            } else if (e.target.value.length < 10) {
-                errormsg[e.target.name] = "Phone Number must be 10 digits.";
-            } else if (e.target.value.length > 10) {
-                errormsg[e.target.name] = "Phone Number is not valid.";
+        if (name === "phnumber") {
+            if (!value) {
+                errormsg[name] = "Phone Number is required!";
+            } else if (value.length < 10) {
+                errormsg[name] = "Phone Number must be 10 digits.";
+            } else if (value.length > 10) {
+                errormsg[name] = "Phone Number is not valid.";
             } else {
-                errormsg[e.target.name] = "";
+                errormsg[name] = "";
             }
         }
 
         if (name === "pass") {
-            if (!value || value < 1 || value > 2) errormsg.pass = "Please select a valid number of adult passes!";
-            else errormsg.pass = "";
+            if (!value || value < 1 || value > 2) {
+                errormsg.pass = "Please select a valid number of adult passes!";
+            } else {
+                errormsg.pass = "";
+            }
         }
 
-        if (name === "childrenpass") {
-            if (!value || value < 1 || value > 2) errormsg.childrenpass = "Please select a valid number of children passes!";
-            else errormsg.childrenpass = "";
-        }
+        // childrenpass mate koi validation nathi
 
         seterrormsg({ ...errormsg });
     };
@@ -63,13 +54,9 @@ function Buynow() {
         let tempError = { ...errormsg };
 
         if (!obj.name) tempError.name = "Name is required!";
-        // if (!obj.email) tempError.email = "E-mail is required!";
         if (!obj.phnumber) tempError.phnumber = "Phone Number is required!";
         if (!obj.pass || obj.pass < 1 || obj.pass > 2) {
             tempError.pass = "Please select a valid number of adult passes!";
-        }
-        if (!obj.childrenpass || obj.childrenpass < 1 || obj.childrenpass > 2) {
-            tempError.childrenpass = "Please select a valid number of children passes!";
         }
 
         seterrormsg(tempError);
@@ -77,9 +64,10 @@ function Buynow() {
         if (Object.values(tempError).every(x => x === "")) {
             axios.post("https://thanganat-backend.vercel.app/", {
                 ...obj,
-                phnumber: Number(obj.phnumber)
+                phnumber: Number(obj.phnumber),
+                childrenpass: obj.childrenpass ? Number(obj.childrenpass) : 0, // default 0
             })
-                .then(res => {
+                .then(() => {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success!',
@@ -87,7 +75,6 @@ function Buynow() {
                         timer: 2000,
                         showConfirmButton: false
                     });
-                    // setSavedId(res.data._id);
                     setobj({ ...blankobj });
                 })
                 .catch(err => {
@@ -128,25 +115,19 @@ function Buynow() {
 
                                         <div className="w-100 mt-4">
                                             <label htmlFor="name" className="w-25 fw-medium">Name</label>
-                                            <input type="text" placeholder="Enter Name" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="name" value={obj.name} onChange={getdata} id="name" />
+                                            <input type="text" placeholder="Enter Name" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="name" value={obj.name || ""} onChange={getdata} id="name" />
                                             <div className='text-danger w-75 ms-auto'>{errormsg.name}</div>
                                         </div>
 
-                                        {/* <div className="w-100 my-4">
-                                            <label htmlFor="email" className="w-25 fw-medium">E-mail</label>
-                                            <input type="text" placeholder="Enter E-mail" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="email" value={obj.email} onChange={getdata} id="email" />
-                                            <div className='text-danger w-75 ms-auto'>{errormsg.email}</div>
-                                        </div> */}
-
                                         <div className="w-100 mt-4">
                                             <label htmlFor="phone" className="w-25 fw-medium">Phone No.</label>
-                                            <input type="number" placeholder="Enter Phone No." className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="phnumber" value={obj.phnumber} onChange={getdata} id="phone" />
+                                            <input type="number" placeholder="Enter Phone No." className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="phnumber" value={obj.phnumber || ""} onChange={getdata} id="phone" />
                                             <div className='text-danger w-75 ms-auto'>{errormsg.phnumber}</div>
                                         </div>
 
                                         <div className="w-100 mt-4">
                                             <label htmlFor="pass" className="w-25 fw-medium">No. Of <br /> Adults</label>
-                                            <select id="pass" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="pass" value={obj.pass} onChange={getdata}>
+                                            <select id="pass" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="pass" value={obj.pass || ""} onChange={getdata}>
                                                 <option value="">Select Pass</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -156,20 +137,18 @@ function Buynow() {
 
                                         <div className="w-100 mt-4">
                                             <label htmlFor="childrenpass" className="w-25 fw-medium">No. Of Children</label>
-                                            <select id="childrenpass" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="childrenpass" value={obj.childrenpass} onChange={getdata}>
-                                                <option value="">Select Pass</option>
+                                            <select id="childrenpass" className="w-75 input_form rounded border border-1 border-secondary px-2 py-1" name="childrenpass" value={obj.childrenpass || "0"} onChange={getdata}>
+                                                <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                             </select>
-                                            <div className='text-danger w-75 ms-auto'>{errormsg.childrenpass}</div>
                                         </div>
-
 
                                         <div className="text-dark fw-bold mt-3" style={{ fontSize: "14.5px" }}>
                                             Note : Registration is compulsory for childrens above 10 years.
                                         </div>
                                         <div className="text-dark fw-bold mt-1 mb-3" style={{ fontSize: "14.5px" }}>
-                                           We will reach out to you promptly once the pass is available.
+                                            We will reach out to you promptly once the pass is available.
                                         </div>
 
                                         <div className="w-100">
@@ -184,24 +163,8 @@ function Buynow() {
                     </div>
                 </div>
             </div >
-
-            {/* {savedId && (
-                <div className="popup-overlay position-fixed w-100 h-100 d-flex justify-content-center align-items-center" onClick={() => setSavedId(null)}>
-                    <div className="popup-content bg-white rounded text-center p-3">
-                        <h3>Success!</h3>
-                        <p>Your form has been submitted.</p>
-                        <p><strong>Saved ID :</strong> {savedId}</p>
-                        <button className="px-3 py-2 border-0 text-white buttons fw-bold cursor-pointer rounded" onClick={() => {
-                            navigator.clipboard.writeText(savedId);
-                            setSavedId(null);
-                        }}>Copy ID</button>
-                        <div className="fw-bold mt-3">રજીસ્ટ્રેશન માટે ID જરૂરી છે, તેથી તેને સાચવી રાખજો અને કોપી કરવાનું ભૂલશો નહીં.</div>
-                    </div>
-                </div>
-            )} */}
         </>
-
     );
 }
 
-export default Buynow;
+export default Buynow

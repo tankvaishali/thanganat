@@ -75,7 +75,7 @@ const Datalist = () => {
 
     return (
         <>
-            <div className='orangecolor text-center mt-3 fs-2 fw-bold' style={{ color: "darkviolet" }}>REGISTERED PASS DATA</div>
+            <div className='orangecolor text-center mt-3 fs-4 fw-bold'>LGDA NAVRATRI THANGANAT 2.0 <div>REGISTERED PASS DATA</div></div>
             <div className="container">
                 <div className="d-flex justify-content-center justify-content-lg-end mb-3 mt-2 mt-lg-0">
                     <button className='buttons fw-medium btn text-light' onClick={handleDownload}>
