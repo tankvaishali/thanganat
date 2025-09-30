@@ -60,7 +60,7 @@ function EventPage() {
                     <h2 className="fw-bold text-warning">  Celebrate Navaratri With LGDA  </h2>
                     <div className='text-center text-white fw-bold'>
                         <h5 className='title py-2'> You're Invited To Our Grand
-                            <span className="text-danger"> LGDA NAVRATRI THANGANAT - 2025 🛕🛕 </span></h5>
+                            <span className="text-danger"> LGDA NAVRATRI THANGANAT 2.0 - 2025 🛕🛕 </span></h5>
                     </div>
                    
                     <div className=" text-dark text-center p-2 rounded-3 mb-0 mb-md-4 fw-bold" style={{backgroundColor:"rgb(0 176 211)"}}>
