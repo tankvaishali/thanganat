@@ -37,16 +37,15 @@ const Datalist = () => {
     const handleDownload = () => {
         if (data.length === 0) return;
 
-        const formattedData = data.map(({ _id, name, email, phnumber, area, pass, updatedAt }, index) => {
+        const formattedData = data.map(({ _id, name, phnumber, pass, childrenpass, updatedAt }, index) => {
             const { formattedDate, formattedTime } = formatDateTime(updatedAt);
             return {
                 No: index + 1,
                 ID: _id,
                 Name: name,
-                Email: email,
                 "Phone No.": phnumber,
-                Area: area,
-                "No. of Pass": pass,
+                "Adult Pass": pass,
+                "Children Pass": childrenpass,
                 Date: formattedDate,
                 Time: formattedTime,
             };
@@ -72,6 +71,7 @@ const Datalist = () => {
     }
 
     const totalPasses = data.reduce((total, item) => total + (item.pass || 0), 0);
+    const totalChildrenPasses = data.reduce((total, item) => total + (item.childrenpass || 0), 0);
 
     return (
         <>
@@ -121,8 +121,12 @@ const Datalist = () => {
                         </tbody>
                         <tfoot>
                             <tr className="table-warning text-end">
-                                <td colSpan="7" className="fw-bold">Total Entry Passes</td>
+                                <td colSpan="7" className="fw-bold">Total Adult Entry Passes</td>
                                 <td className="fw-bold">{totalPasses}</td>
+                            </tr>
+                            <tr className="table-warning text-end">
+                                <td colSpan="7" className="fw-bold">Total Children Entry Passes</td>
+                                <td className="fw-bold">{totalChildrenPasses}</td>
                             </tr>
                         </tfoot>
                     </table>
